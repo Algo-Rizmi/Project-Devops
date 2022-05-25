@@ -14,10 +14,10 @@ spec:
       containers:
         - name: chat
           imagePullPolicy: IfNotPresent
-          image: docker.io/yosephdev/chat_api:latest
+          image: chat:latest
           ports:
-            - containerPort: 80
-              name: http-web-svc
+            - containerPort: 3000
+            
 
 ---
 apiVersion: v1
@@ -30,5 +30,5 @@ spec:
   ports:
     - name: static
       protocol: TCP
-      port: 80
-      targetPort: http-web-svc
+      port: 3000
+      targetPort: 3000
